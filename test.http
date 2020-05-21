@@ -1,0 +1,31 @@
+@url=http://localhost:2020
+@json=Content-Type: application/json
+###
+get {{url}}/api
+
+### 注册
+post {{url}}/api/register
+{{json}}
+
+{
+    "username":"zhanglei",
+    "password":"123456",
+    "confirmPwd":"123456"
+}
+
+### 登陆
+post {{url}}/api/login
+{{json}}
+
+{
+    "username":"zhanglei",
+    "password":"123456"
+}
+
+### 查找所有用户
+get {{url}}/api/users
+
+###用户详细信息
+
+get {{url}}/api/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlYTY4ZWZkMTIwYWVkMWQ2YzZkOWQ3MCIsImlhdCI6MTU4Nzk3NTc4MX0.4upIRonBVZQg3BRroDw4aw1eEQDt6QV7nPwIIuiCnyU
